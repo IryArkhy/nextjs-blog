@@ -1,27 +1,23 @@
-import { combineReducers } from 'redux';
+import { combineReducers, AnyAction } from 'redux';
 import types from './postTypes';
 import {
-  Post, PostsReducer, SuccessGetPostAction,
-  SuccessAllPostsAction,
-  SuccessCreatePostAction, Error
-} from './postInterfaces'
+  IPost, IError
+} from '../../types'
 
-//??
-
-
-const postsReducer = (state = [], action: any): Post[] | Post => {
-  switch (action.type) {
+const postsReducer = (state: IPost[] = [], { type, payload }: AnyAction): IPost[] | IPost => {
+  switch (type) {
     case types.GET_POSTS_SUCCESS:
-      return action.payload.posts;
+      return payload.posts;
 
     case types.GET_POST_SUCCESS:
-      return action.payload.post;
+      return payload.post;
 
     case types.CREATE_POST_SUCCESS:
-      return [action.payload.post, ...state];
+      return [payload.post, ...state];
 
     case types.REMOVE_POST_SUCCESS:
-      return state.filter(post => post.id !== action.payload.id);
+      return state.filter(post => post.id !== payload.id);
+
 
     default:
       return state;
@@ -29,8 +25,8 @@ const postsReducer = (state = [], action: any): Post[] | Post => {
 };
 
 
-const errorReducer = (state = null, action: any): Error => {
-  switch (action.type) {
+const errorReducer = (state: IError = null, { type, payload }: AnyAction): IError => {
+  switch (type) {
     case types.GET_POSTS_START:
     case types.CREATE_POST_START:
     case types.GET_POST_START:
@@ -41,7 +37,7 @@ const errorReducer = (state = null, action: any): Error => {
     case types.CREATE_POST_ERROR:
     case types.GET_POST_ERROR:
     case types.REMOVE_POST_ERROR:
-      return action.payload.error;
+      return payload.error;
 
     default:
       return state;
