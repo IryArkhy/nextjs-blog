@@ -11,6 +11,7 @@
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
+    "noImplicitAny": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -26,5 +27,5 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/index.tsx"
-  ]
+  ],
 }
