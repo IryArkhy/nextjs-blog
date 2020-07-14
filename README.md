@@ -3,7 +3,7 @@
 
 Steps to run:
 
-- Clone this repository: https://github.com/prima3110/Blog.git
+- Clone the repository: https://github.com/IryArkhy/nextjs-blog
 - Install dependencies: npm install
 - Start the application: npm run dev
 - Open it on http://localhost:3000
