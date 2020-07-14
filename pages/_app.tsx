@@ -1,4 +1,4 @@
-import { PersistGate } from 'redux-persist/integration/react';
+import PersistGate from 'redux-persist/integration/react';
 import { wrapper } from '../src/redux/store';
 import { useStore } from 'react-redux'
 import '../src/styles/global.css';
