@@ -6,7 +6,7 @@ import { IStore } from '../src/types/interfaces'
 
 
 const WrappedApp = ({ Component, pageProps }: any) => {
-  const store = useStore((state) => state);
+  const store = useStore((state: any) => state);
   return (
     <PersistGate persistor={store.__persistor}>
       <Component {...pageProps} />
