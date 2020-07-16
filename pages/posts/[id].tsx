@@ -21,7 +21,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await api.getIDs();
   return {
     paths,
-    fallback: false
+    fallback: true
   }
 }
 
