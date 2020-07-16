@@ -44,11 +44,11 @@ margin: 5px auto;
 export const Button = styled.button`
 display: block;
 padding: 10px;
-    border: none;
-    border-radius: 16px;
-    color: white;
-    background-color: rgb(249, 84, 84);
-    margin: 25px auto;
-    width: 134px;
-    font-size: 20px;
+border: none;
+border-radius: 16px;
+color: white;
+background-color: rgb(249, 84, 84);
+margin: 25px auto;
+width: 134px;
+font-size: 20px;
 `;

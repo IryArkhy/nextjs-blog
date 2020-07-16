@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const PostWrapper = styled.div`
-    width: 100%;
-    height: 265px;
-    border-radius: 10px;
-    text-align: left;
-    border: 4px solid #38A8FF;
-    color: rgb(78, 88, 96);
-    padding: 20px;
+width: 100%;
+height: 265px;
+border-radius: 10px;
+text-align: left;
+border: 4px solid #38A8FF;
+color: rgb(78, 88, 96);
+padding: 20px;
 
 `;
 
