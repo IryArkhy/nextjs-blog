@@ -4,6 +4,7 @@ import { IPost, ICreateNewPostBody, IError } from '../types'
 axios.defaults.baseURL = 'https://simple-blog-api.crew.red/';
 
 const getAllPosts = (): Promise<IPost[]> => axios.get('posts');
+
 const getPostById = (postId: number): Promise<IPost | {}> => axios.get(`posts/${postId}?_embed=comments`);
 const createPost = (post: ICreateNewPostBody): Promise<IPost> => axios.post('posts', post);
 const deletePost = (id: number): Promise<{}> => axios.delete(`posts/${id}`);
@@ -27,5 +28,5 @@ export default {
   createPost,
   deletePost,
   getIDs,
-  getPostByIdForRender
+  getPostByIdForRender,
 }
