@@ -1,11 +1,17 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import api from '../../src/services/api'
 import Header from '../../src/components/Header/Header';
 import { IPost } from '../../src/types';
 import PostInfo from '../../src/components/PostInfoPage'
 
 const PostPage = ({ postData }: { postData: IPost }) => {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <div>Loading...</div>
+  }
+
   return (
     <>
       <Head>
@@ -21,7 +27,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await api.getIDs();
   return {
     paths,
-    fallback: true
+    fallback: false
   }
 }
 
